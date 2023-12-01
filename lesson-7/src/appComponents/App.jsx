@@ -6,6 +6,8 @@ import styled from 'styled-components'
 import HadComponent from "../sectionHadComponent/had"
 import Teq from '../teqCont/teq'
 import Submit from '../inputComponents/submitButton'
+import Masivi from '../masivi/masiv'
+
 
 const Section = styled.section`
     width: 80%;
@@ -31,20 +33,16 @@ function App() {
        <HadComponent/>
        
        <div className="SelectBasicExampleDiv">
-       <Teq/>
-       
-        <form action="#" method='#' className='SelectBasicExampleForm'>
-         <SelectBasicExample />
-         <SelectBasicExample2/>
+         <Teq/>
+         
          <Submit/>
-        </form >
-         
-       
-         
+        
        </div>
       
     </Section>
-     
+
+   
+     <Masivi/>
 
     </>
 

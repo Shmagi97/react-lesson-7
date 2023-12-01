@@ -3,18 +3,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Form from 'react-bootstrap/Form';
 import "../inputComponents/inputs.css"
+// import Masivi from '../masivi/masiv';
 
 
 
-function SelectBasicExample() {
+function SelectBasicExample(props) {
+  
   return (
-    <>
-
-    <form action="">
-
-
-      
-    </form>
+   <>
+   
+    {/* {console.log(props.pirveli)} */}
     <Form.Select aria-label="Default select example" className='inputs'>
       <option>Open this select menu</option>
       <option value="1">One</option>
@@ -23,8 +21,8 @@ function SelectBasicExample() {
       
     </Form.Select>
 
-   
     </>
+    
     
 
   );

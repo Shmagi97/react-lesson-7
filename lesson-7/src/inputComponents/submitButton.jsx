@@ -1,9 +1,23 @@
 import { Button } from "react-bootstrap"
+import SelectBasicExample from "./input1"
+import SelectBasicExample2 from "./input2"
+import '../inputComponents/inputs.css'
 
 
 const Submit = ()=> {
     return(
-        <Button>ძებნა</Button>
+        <>
+
+        <form action="" className="SelectBasicExampleForm">
+         
+           <SelectBasicExample/>
+           <SelectBasicExample2/>
+           <Button type="submit">ძებნა</Button>
+             
+        </form>
+          
+        </>
+       
     )
 }
 

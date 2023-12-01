@@ -1,0 +1,63 @@
+.sectionHadComponent {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+.sectionDiv {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.sectionDiv > span {
+  cursor: pointer;
+}
+
+.sectionDiv > span:hover {
+  color: red;
+}
+
+.sectionDiv2 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.sectionDiv2 > span {
+  cursor: pointer;
+}
+
+.sectionDiv2 > span:hover {
+  color: red;
+}
+
+.toggle {
+  border: solid black;
+  border-radius: 10px;
+  height: 20px;
+  width: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: black;
+}
+
+.toggleInput {
+  display: none;
+}
+
+.slider {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: aliceblue;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggleInput:checked + .slider {
+  transform: translateX(10px);
+}

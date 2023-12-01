@@ -1,0 +1,11 @@
+.teqDiv {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.teqDiv > span:hover {
+  color: rgb(206, 27, 27);
+}

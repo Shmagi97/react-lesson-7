@@ -3,23 +3,31 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Form from 'react-bootstrap/Form';
 import "../inputComponents/inputs.css"
-// import Masivi from '../masivi/masiv';
+import { useState } from 'react';
 
 
 
 function SelectBasicExample(props) {
+     
+  
   
   return (
    <>
    
-    {/* {console.log(props.pirveli)} */}
-    <Form.Select aria-label="Default select example" className='inputs'>
-      <option>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+    
+    <Form.Select aria-label="Default select example" className='inputs' >
+      
+       {/* {props.masivState1.map((el, index)=> {
+        
+        return(
+          <option value={index} key={index}>{el.name}</option>
+        )
+       })} */}
       
     </Form.Select>
+
+     {/* <input type="number" onChange={(event)=> setIndex(event.target.value)}/> 
+     {console.log(index)}   */}
 
     </>
     

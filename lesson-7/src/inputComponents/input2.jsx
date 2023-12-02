@@ -6,13 +6,14 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import Form from 'react-bootstrap/Form';
 import "../inputComponents/inputs.css"
 
-function SelectBasicExample2() {
+function SelectBasicExample2(props) {
   return (
     <Form.Select aria-label="Default select example" className='inputs'>
-      <option>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+       {/* {props.masivState1.map((el, index)=> {
+        return(
+          <option value={index} key={index}>{el.name}</option>
+        )
+       })} */}
     </Form.Select>
   );
 }

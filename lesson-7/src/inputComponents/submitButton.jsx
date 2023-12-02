@@ -4,17 +4,27 @@ import SelectBasicExample2 from "./input2"
 import '../inputComponents/inputs.css'
 
 
-const Submit = ()=> {
+const Submit = (props)=> {
     return(
         <>
 
         <form action="" className="SelectBasicExampleForm">
          
-           <SelectBasicExample/>
-           <SelectBasicExample2/>
-           <Button type="submit">ძებნა</Button>
+           <SelectBasicExample
+          
+            // masivState1 = {props.masivState}
+           
+           />
+           {/* {console.log(props.masivState, 'sjjsjs')} */}
+           
+           <SelectBasicExample2
+            //   masivState1 = {props.masivState}
+           />
+           <Button type="submit" onClick={props.function}>ძებნა</Button>
              
         </form>
+
+        {/* {console.log(props.inpustState)} */}
           
         </>
        

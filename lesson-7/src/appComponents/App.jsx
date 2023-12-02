@@ -1,12 +1,10 @@
 
 import './App.css'
-import SelectBasicExample from "../inputComponents/input1"
-import SelectBasicExample2 from "../inputComponents/input2"
 import styled from 'styled-components'
 import HadComponent from "../sectionHadComponent/had"
 import Teq from '../teqCont/teq'
-import Submit from '../inputComponents/submitButton'
 import Masivi from '../masivi/masiv'
+import GetInfofromMasiv from '../geiInfo/getInfo'
 
 
 const Section = styled.section`
@@ -35,14 +33,14 @@ function App() {
        <div className="SelectBasicExampleDiv">
          <Teq/>
          
-         <Submit/>
+         <Masivi/>
         
        </div>
       
     </Section>
 
-   
-     <Masivi/>
+    <GetInfofromMasiv/>
+     
 
     </>
 

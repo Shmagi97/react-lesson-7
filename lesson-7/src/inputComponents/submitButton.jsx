@@ -8,7 +8,7 @@ const Submit = (props)=> {
         const getValueInInputChild = (event)=>{
         const getValue1 = event.target.value;
         props.getValueState(getValue1)
-        console.log(getValue1)
+        // console.log(getValue1)
        }
       
       
@@ -17,11 +17,11 @@ const Submit = (props)=> {
 
         <form action="" className="SelectBasicExampleForm">
          <Form.Select aria-label="Default select example" className='inputs' onChange={getValueInInputChild}>
-      
+             <option value="no">search name</option>
             {props.masivStaticState.map((el, index)=> {
             
              return(
-         
+             
              <option value={el.id} key={index}>{el.name}</option>
        
              )
@@ -30,6 +30,7 @@ const Submit = (props)=> {
         </Form.Select>
 
         <Form.Select aria-label="Default select example" className='inputs'>
+            <option value="no">search brand</option>
            {props.masivStaticState.map((el, index)=> {
         
             return(
@@ -38,7 +39,7 @@ const Submit = (props)=> {
              })}
           </Form.Select>
 
-          <Button  onClick={props.function } >ძებნა</Button>
+          <Button onClick={props.function } >ძებნა</Button>
         </form>
           
         </>

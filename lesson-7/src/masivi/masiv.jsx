@@ -10,7 +10,7 @@ const Masivi = (props)=> {
     const [list, setList] = useState([])
      
     const [value, setValue] = useState()
-    // console.log(value) 
+ 
     const getValueInInput = (getValue) => {
         setValue(getValue)
        
@@ -71,26 +71,19 @@ const Masivi = (props)=> {
         }
     ]
 
-    
-    
 
-      const filterEdMasivStatic = masivStatic.filter((el)=> el.id==value)
-    //   console.log(filterEdMasivStatic[0].url)
-
+       if (!value || value === "no"){
+        alert("საძიებო ველი ცარიელია")
+       } else {
+        const filterEdMasivStatic = masivStatic.filter((el)=> el.id==value )
+     
         const response = await fetch(`${filterEdMasivStatic[0].url}`);
         const dataMasiv = await response.json();
-        console.log(dataMasiv, 'dataMasiv')
         props.getDataFn(dataMasiv)
-        
+        // console.log(dataMasiv)
+       }
 
         
-       
-
-       
-        // const itemId = filterEdData[index]; 
-        // console.log(itemId.car_desc)
-         
-       
   
     }
 
@@ -98,6 +91,7 @@ const Masivi = (props)=> {
 
         const masivStatic = [
             { 
+                
                name: 'Xiaomi Redmi 13C 8/256GB Blue',
                brandName: "Xiaomi",
                id: 1

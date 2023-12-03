@@ -24,7 +24,7 @@ const Section = styled.section`
 function App() {
    
   const [data, setData] = useState()
-  //  console.log(data, 'ragaca wamoigo')
+  
   const getTitle = (value) => {
     setData(value)
   }

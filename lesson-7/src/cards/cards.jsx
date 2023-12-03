@@ -9,9 +9,6 @@ import Card from 'react-bootstrap/Card';
 
 function BasicExample(props) {
 
-   console.log(props, 'data')
-   
-
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={props.dataState1?.imageUrl} />

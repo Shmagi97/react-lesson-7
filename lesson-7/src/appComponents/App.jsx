@@ -5,7 +5,7 @@ import HadComponent from "../sectionHadComponent/had"
 import Teq from '../teqCont/teq'
 import Masivi from '../masivi/masiv'
 import GetInfofromMasiv from '../geiInfo/getInfo'
-
+import { useState } from 'react';
 
 const Section = styled.section`
     width: 80%;
@@ -23,7 +23,11 @@ const Section = styled.section`
 
 function App() {
    
-  
+  const [data, setData] = useState()
+  //  console.log(data, 'ragaca wamoigo')
+  const getTitle = (value) => {
+    setData(value)
+  }
 
   return (
     <>
@@ -33,13 +37,17 @@ function App() {
        <div className="SelectBasicExampleDiv">
          <Teq/>
          
-         <Masivi/>
+         <Masivi
+         getDataFn = {getTitle}
+         />
         
        </div>
       
     </Section>
 
-    <GetInfofromMasiv/>
+    <GetInfofromMasiv
+      dataState = {data}
+    />
      
 
     </>

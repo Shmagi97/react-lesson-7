@@ -1,30 +1,45 @@
 import { Button } from "react-bootstrap"
-import SelectBasicExample from "./input1"
-import SelectBasicExample2 from "./input2"
 import '../inputComponents/inputs.css'
+import Form from 'react-bootstrap/Form';
 
 
 const Submit = (props)=> {
+    
+        const getValueInInputChild = (event)=>{
+        const getValue1 = event.target.value;
+        props.getValueState(getValue1)
+        console.log(getValue1)
+       }
+      
+      
     return(
         <>
 
         <form action="" className="SelectBasicExampleForm">
+         <Form.Select aria-label="Default select example" className='inputs' onChange={getValueInInputChild}>
+      
+            {props.masivStaticState.map((el, index)=> {
+            
+             return(
          
-           <SelectBasicExample
-          
-            // masivState1 = {props.masivState}
-           
-           />
-           {/* {console.log(props.masivState, 'sjjsjs')} */}
-           
-           <SelectBasicExample2
-            //   masivState1 = {props.masivState}
-           />
-           <Button type="submit" onClick={props.function}>ძებნა</Button>
-             
-        </form>
+             <option value={el.id} key={index}>{el.name}</option>
+       
+             )
+            })}
+     
+        </Form.Select>
 
-        {/* {console.log(props.inpustState)} */}
+        <Form.Select aria-label="Default select example" className='inputs'>
+           {props.masivStaticState.map((el, index)=> {
+        
+            return(
+              <option value={index} key={index}>{el.brandName}</option>
+             )
+             })}
+          </Form.Select>
+
+          <Button  onClick={props.function } >ძებნა</Button>
+        </form>
           
         </>
        

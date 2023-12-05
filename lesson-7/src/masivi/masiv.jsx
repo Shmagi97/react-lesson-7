@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-
+import { useCallback, useEffect, useMemo, useState } from "react";
+import axios from "axios"
 import Submit from "../inputComponents/submitButton";
 
 
@@ -8,16 +8,18 @@ import Submit from "../inputComponents/submitButton";
 const Masivi = (props)=> {
     
     const [list, setList] = useState([])
-     
+    const [axiosdata, setAxiosdata] = useState ([])
     const [value, setValue] = useState()
- 
     const getValueInInput = (getValue) => {
         setValue(getValue)
        
     }
+    useCallback(()=> masivGetButton(),  [value])
    
-   async function masivGetButton() {
-  
+  async function masivGetButton() {
+
+       
+
     const masivStatic = [
         {
            url: 'https://api.zoommer.ge/v1/Content/sharing-info?productId=38494',
@@ -72,20 +74,23 @@ const Masivi = (props)=> {
     ]
 
 
-       if (!value || value === "no"){
-        alert("საძიებო ველი ცარიელია")
-       } else {
-        const filterEdMasivStatic = masivStatic.filter((el)=> el.id==value )
-     
-        const response = await fetch(`${filterEdMasivStatic[0].url}`);
-        const dataMasiv = await response.json();
-        props.getDataFn(dataMasiv)
-        // console.log(dataMasiv)
-       }
-
         
+        if (!value || value === "no"){
+            alert("საძიებო ველი ცარიელია")
+           } else {
+            const filterEdMasivStatic = masivStatic.filter((el)=> el.id==value )
+         
+            const response = await fetch(`${filterEdMasivStatic[0].url}`);
+            const dataMasiv = await response.json();
+            props.getDataFn(dataMasiv)
+            // console.log(dataMasiv)
+           }
+      
+           
   
     }
+
+   
 
     function masivGet() {
 
@@ -163,6 +168,23 @@ const Masivi = (props)=> {
         masivGet();
        
     },[])
+
+
+   useEffect(()=> {
+   
+    axios.get('https://api.zoommer.ge/v1/Products/v3?CategoryId=855&Page=1&Limit=60')
+    .then(response => {
+        setAxiosdata(response.data)
+        props.getAxiosFn(response.data)
+        // console.log(response.data)
+    })
+    .catch(errors => {
+        console.log(errors)
+    })
+    
+   
+
+   },[])
 
 
     return(

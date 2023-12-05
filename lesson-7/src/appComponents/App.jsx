@@ -6,6 +6,7 @@ import Teq from '../teqCont/teq'
 import Masivi from '../masivi/masiv'
 import GetInfofromMasiv from '../geiInfo/getInfo'
 import { useState } from 'react';
+import SearchKomponent from '../searchKomponet/search'
 
 const Section = styled.section`
     width: 80%;
@@ -24,21 +25,28 @@ const Section = styled.section`
 function App() {
    
   const [data, setData] = useState()
-  
+  const [axisdataapp, setAxiosdataapp] = useState([])
+  console.log(axisdataapp, 'raaaaaaaa')
   const getTitle = (value) => {
     setData(value)
   }
 
+  const getDataAxios = (value) =>{
+    setAxiosdataapp(value)
+  }
+
   return (
     <>
+   
     <Section>
        <HadComponent/>
-       
+       <SearchKomponent/>
        <div className="SelectBasicExampleDiv">
          <Teq/>
          
          <Masivi
          getDataFn = {getTitle}
+         getAxiosFn = {getDataAxios}
          />
         
        </div>
@@ -47,6 +55,7 @@ function App() {
 
     <GetInfofromMasiv
       dataState = {data}
+    
     />
      
 

@@ -1,6 +1,6 @@
 .searchSection {
   width: 100%;
-  height: 200px;
-  border: solid red;
-  display: flex;
+
+  display: grid;
+  justify-content: space-evenly;
 }

@@ -1,0 +1,9 @@
+.divMinMax {
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.divMinMax > input {
+  width: 30%;
+}

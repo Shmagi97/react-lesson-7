@@ -175,8 +175,8 @@ const Masivi = (props)=> {
     axios.get('https://api.zoommer.ge/v1/Products/v3?CategoryId=855&Page=1&Limit=60')
     .then(response => {
         setAxiosdata(response.data)
-        props.getAxiosFn(response.data)
-        // console.log(response.data)
+        props.getAxiosFn(response.data.products)
+        
     })
     .catch(errors => {
         console.log(errors)
@@ -196,15 +196,7 @@ const Masivi = (props)=> {
         
           />
           
-          {/* {data.map((el, index)=>{
-            
-
-             
-                // {console.log(el.client_name)}
-               
-          
-           
-          })} */}
+       
 
           
         </>

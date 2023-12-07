@@ -25,14 +25,15 @@ const Section = styled.section`
 function App() {
    
   const [data, setData] = useState()
-  const [axisdataapp, setAxiosdataapp] = useState([])
-  console.log(axisdataapp, 'raaaaaaaa')
+  const [axiosdataapp, setAxiosdataapp] = useState([])
+  // console.log(axiosdataapp)
   const getTitle = (value) => {
     setData(value)
   }
 
   const getDataAxios = (value) =>{
     setAxiosdataapp(value)
+   
   }
 
   return (
@@ -40,7 +41,9 @@ function App() {
    
     <Section>
        <HadComponent/>
-       <SearchKomponent/>
+       <SearchKomponent
+        axiosdataState = {axiosdataapp}
+       />
        <div className="SelectBasicExampleDiv">
          <Teq/>
          
@@ -57,7 +60,7 @@ function App() {
       dataState = {data}
     
     />
-     
+      
 
     </>
 

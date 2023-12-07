@@ -1,35 +1,14 @@
-/* .chekboxSection {
-  width: 100%;
-  height: 100%;
-
+.chekboxDiv {
   display: flex;
+  gap: 20px;
+  padding: 10px;
 }
 
-.chekboxSection > div:first-child {
-  width: 40px;
-  height: 100%;
-  display: grid;
-  justify-content: flex-start;
-  padding: 0 10px;
-}
-
-.chekboxSection > div:last-child {
-  width: 70%;
-  height: 100%;
-  display: grid;
-  justify-content: flex-start;
-  padding: 0 10px;
-  padding: 0px 0px 10px 0px;
-}
-
-.chekboxSection > div > input {
+.chekboxDiv > input {
   width: 20px;
   height: 20px;
-  cursor: pointer;
-} */
+}
 
-.chekboxDiv {
-  border: solid red;
-  display: grid;
-  justify-content: flex-start;
+.chekboxDiv > label {
+  margin-top: -5px;
 }

@@ -83,7 +83,7 @@ const Masivi = (props)=> {
             const response = await fetch(`${filterEdMasivStatic[0].url}`);
             const dataMasiv = await response.json();
             props.getDataFn(dataMasiv)
-            // console.log(dataMasiv)
+            
            }
       
            

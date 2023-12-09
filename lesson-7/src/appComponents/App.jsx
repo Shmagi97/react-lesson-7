@@ -19,6 +19,7 @@ const Section = styled.section`
     // display: flex;
     // justify-content: center;
     // align-items: center;
+   
 
 `
 
@@ -47,7 +48,7 @@ function App() {
         // console.log(axiosdataapp,'brandName') 
 
   return (
-    <>
+    <div className='appDivdisplayGred'>
    
     <Section>
        <HadComponent/>
@@ -74,7 +75,7 @@ function App() {
     />
       
 
-    </>
+    </div>
 
     
    
@@ -84,4 +85,10 @@ function App() {
   )
 }
 
-export default App
+
+
+
+
+
+
+export  {App}

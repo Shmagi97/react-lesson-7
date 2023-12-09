@@ -1,10 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './appComponents/App.jsx'
+
+import  {  App } from './appComponents/App'
+
+
+
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
- 
-    <App />
- 
+    
+     <App/>
+   
 )

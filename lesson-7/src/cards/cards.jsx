@@ -43,19 +43,7 @@ function Cardkomponent2(props){
     )
   })
 
-  // return (
-  //   <Card style={{ width: '18rem' }}>
-  //     <Card.Img variant="top" src={props.filterEdChekbox2?.imageUrl} />
-  //     <Card.Body>
-  //       <Card.Title>{}</Card.Title>
-  //       <Card.Text>
-  //         {}
-  //       </Card.Text>
-  //       <Button variant="primary">ყიდვა</Button>
-  //     </Card.Body>
-  //   </Card>
-  // );
-
+ 
   )
 }
 

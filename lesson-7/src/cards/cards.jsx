@@ -7,8 +7,8 @@ import Card from 'react-bootstrap/Card';
 
 
 
-function BasicExample(props) {
-  
+function Cardkomponent(props) {
+  // console.log(props.dataState1)
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={props.dataState1?.imageUrl} />
@@ -23,4 +23,40 @@ function BasicExample(props) {
   );
 }
 
-export default BasicExample;
+function Cardkomponent2(props){
+ 
+  return(
+  
+  props.filterEdChekbox2.map((el,index)=>{
+    // console.log(el)
+    return(
+      <Card style={{ width: '18rem' }} key={index}>
+      <Card.Img variant="top" src={el.imageUrl} />
+      <Card.Body>
+        <Card.Title>{el.name}</Card.Title>
+        <Card.Text>
+          {el.parentCategoryName}
+        </Card.Text>
+        <Button variant="primary">ყიდვა</Button>
+      </Card.Body>
+    </Card>
+    )
+  })
+
+  // return (
+  //   <Card style={{ width: '18rem' }}>
+  //     <Card.Img variant="top" src={props.filterEdChekbox2?.imageUrl} />
+  //     <Card.Body>
+  //       <Card.Title>{}</Card.Title>
+  //       <Card.Text>
+  //         {}
+  //       </Card.Text>
+  //       <Button variant="primary">ყიდვა</Button>
+  //     </Card.Body>
+  //   </Card>
+  // );
+
+  )
+}
+
+export  {Cardkomponent, Cardkomponent2};

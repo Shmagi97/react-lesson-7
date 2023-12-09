@@ -1,48 +1,32 @@
-import { useState } from 'react'
+
 import '../searchKomponet/chekbox.css'
 
 
 const ChekBoxKomponent = (props)=> {
 
-    const [name, setName]  = useState([])
-  
-
-    
-    
-    if (props.chekboxAxiosState){
-        // console.log(props.chekboxAxiosState[0]?.name)
-
-        const filterName = props.chekboxAxiosState?.map((el)=> el.name )
-        
-
-        props.chekboxAxiosState.map((el, index)=> {
-           
-            const nameSet = el.name
-            // setName(nameSet)
-            // console.log(nameSet)
-        })
-    } 
+    function getValueChekbox (event){
+        const getValue = event.target.value
+        props.getChekId2(getValue)
+        // console.log(getValue, 'xxxxxxxxxxxxxxx')
+    }
     
     return(
      
         <div className="chekboxDiv">
-           <input type="checkbox" id='input1' />
-           <label htmlFor="input1" > </label>
+           
+           {props.chekboxAxiosState?.map((el, index)=> {
+            
+            return(
+                <div key={index}  className='chekboxDiv2'>
+                   <input type="checkbox" value={el.brandName} onClick={getValueChekbox} />
+                   <label htmlFor="input1" > {el.brandName} 
+                   </label>
+                </div>
+                
+            )
+           })}
 
-           <input type="checkbox" id='input2'/>
-           <label htmlFor="input2">wwwwwwww</label>
-
-           <input type="checkbox" id='input3' />
-           <label htmlFor="input3">wwwwwwww</label>
-
-           <input type="checkbox" id='input4'/>
-           <label htmlFor="input4">wwwwwwww</label>
-
-           <input type="checkbox"  id='input5'/>
-           <label htmlFor="input5">wwwwwwww</label>
-        </div>
-       
-        
+        </div> 
    
        
     )

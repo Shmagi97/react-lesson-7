@@ -8,7 +8,7 @@ const Submit = (props)=> {
         const getValueInInputChild = (event)=>{
         const getValue1 = event.target.value;
         props.getValueState(getValue1)
-        // console.log(getValue1)
+       
        }
       
       

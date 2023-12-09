@@ -26,7 +26,9 @@ function App() {
    
   const [data, setData] = useState()
   const [axiosdataapp, setAxiosdataapp] = useState([])
-  // console.log(axiosdataapp)
+  const [chekid, setChekid]  = useState ()
+  // console.log(chekid) 
+
   const getTitle = (value) => {
     setData(value)
   }
@@ -36,6 +38,14 @@ function App() {
    
   }
 
+  function getChekboxId (value){
+    setChekid(value)
+  }
+
+ const filteredChekIdAxios = axiosdataapp?.filter(el => el.brandName === chekid)
+
+        // console.log(axiosdataapp,'brandName') 
+
   return (
     <>
    
@@ -43,6 +53,7 @@ function App() {
        <HadComponent/>
        <SearchKomponent
         axiosdataState = {axiosdataapp}
+        getChekId = {getChekboxId}
        />
        <div className="SelectBasicExampleDiv">
          <Teq/>
@@ -58,6 +69,7 @@ function App() {
 
     <GetInfofromMasiv
       dataState = {data}
+      filterEdChekbox = {filteredChekIdAxios}
     
     />
       

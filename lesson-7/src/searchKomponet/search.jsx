@@ -8,11 +8,9 @@ const SearchKomponent = (props)=> {
     <section className="searchSection">
       <ChekBoxKomponent
        chekboxAxiosState = {props.axiosdataState}
+       getChekId2 = {props.getChekId}
       />
-      <ChekBoxKomponent
-      
-      />
-      <ChekBoxKomponent/>
+     
       <MinMaxPrice/>
     </section>
     )

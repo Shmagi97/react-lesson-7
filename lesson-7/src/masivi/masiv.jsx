@@ -170,14 +170,19 @@ const Masivi = (props)=> {
     },[])
 
 
-   useEffect(()=> {
+   useMemo(()=> {
    
     axios.get('https://api.zoommer.ge/v1/Products/v3?CategoryId=855&Page=1&Limit=60')
     .then(response => {
-        setAxiosdata(response.data)
-        props.getAxiosFn(response.data.products)
-        
+        // setAxiosdata(response.data)
+       
+        const dataAxios = response.data.products
+        props.getAxiosFn(dataAxios)
+       
     })
+
+   
+
     .catch(errors => {
         console.log(errors)
     })
@@ -186,7 +191,45 @@ const Masivi = (props)=> {
 
    },[])
 
+  
+  
 
+
+    // async function fetchNameById(number) {
+    //     try {
+    //       const response = await fetch(`https://api.zoommer.ge/v1/Products/v3?CategoryId=855&Page=1&Limit=60&id=${number}`);
+    //       const data = await response.json();
+          
+         
+    //       if (data && data.products && Array.isArray(data.products)) {
+    //         const productsArray = data.products;
+         
+    //         const foundProduct = productsArray.find(product => product.id === number);
+    //        console.log(foundProduct, 'sss')
+            
+    //         if (foundProduct && foundProduct.name) {
+    //           const productName = foundProduct.name;
+    //           console.log('Name:', productName);
+    //           return productName;
+    //         } else {
+    //           console.log('Product not found or name not available');
+    //           return null;
+    //         }
+    //       } else {
+    //         console.log('Invalid data structure or products not found');
+    //         return null;
+    //       }
+    //     } catch (error) {
+    //       console.log('Error fetching data:', error);
+    //       return null;
+    //     }
+    //   }
+      
+    
+    //   fetchNameById(37607);
+      
+ 
+   
     return(
         <>
           <Submit
